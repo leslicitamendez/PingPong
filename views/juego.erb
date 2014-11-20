@@ -1,0 +1,24 @@
+<%= $jugador1 %> vs <%= $jugador2 %>
+<form for="jugador1" action="/anotar1" method="post">
+	<div id="jugador1"><%= $marcador1 %></div>
+	<% if $marcador2 != 40 %>
+		<input type="submit" name="btn_jugador1" value="anotar">
+	<%end%>
+	<% if $marcador1 < 40 %>
+		jugador1 gana la partida
+	<%else%>
+		GANASTE..!!!
+	<%end%>
+</form>
+<form for="jugador2" action="/anotar2" method="post">
+	<div id="jugador2"><%= $marcador2 %></div>
+	<% if $marcador1 != 40 %>
+		<input type="submit" name="btn_jugador2" value="anotar">
+	<%end%>
+	<% if $marcador2 < 40 %>
+		jugador2 gana la partida
+	<%else%>
+		GANASTE..!!!
+	<%end%>
+</form>
+
